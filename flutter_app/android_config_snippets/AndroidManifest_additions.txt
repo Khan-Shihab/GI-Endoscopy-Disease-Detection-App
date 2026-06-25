@@ -1,0 +1,18 @@
+Add these inside the <manifest> tag of android/app/src/main/AndroidManifest.xml,
+above the <application> tag:
+
+<uses-permission android:name="android.permission.CAMERA" />
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+<uses-permission android:name="android.permission.INTERNET" />
+
+<uses-feature android:name="android.hardware.camera" android:required="false" />
+
+Notes:
+- INTERNET is required to reach the FastAPI backend (HTTP cleartext to
+  localhost/emulator is allowed by default in debug builds; for a
+  production HTTP, not HTTPS, backend you'd also need a network
+  security config -- strongly prefer HTTPS in production instead).
+- READ_MEDIA_IMAGES is the Android 13+ replacement for
+  READ_EXTERNAL_STORAGE; image_picker handles the version branching,
+  but both permissions should be declared.

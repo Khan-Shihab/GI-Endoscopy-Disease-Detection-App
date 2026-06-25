@@ -1,0 +1,39 @@
+name: polyp_detection_app
+description: A clinical-grade Flutter app for endoscopy polyp detection.
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+
+  # Image capture
+  image_picker: ^1.1.2
+  permission_handler: ^11.3.1
+
+  # Networking
+  http: ^1.2.1
+  http_parser: ^4.0.2
+
+  # State management
+  provider: ^6.1.2
+
+  # UI polish
+  google_fonts: ^6.2.1
+  flutter_spinkit: ^5.2.1
+
+  # About screen links
+  url_launcher: ^6.3.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  # assets/models/ removed — inference runs on the FastAPI server, not on-device

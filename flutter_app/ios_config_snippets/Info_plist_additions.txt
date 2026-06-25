@@ -1,0 +1,11 @@
+Add these keys inside ios/Runner/Info.plist, as siblings of the other
+<key>...</key><string>...</string> pairs:
+
+<key>NSCameraUsageDescription</key>
+<string>This app needs camera access to capture endoscopy images for polyp detection.</string>
+
+<key>NSPhotoLibraryUsageDescription</key>
+<string>This app needs photo library access to select endoscopy images for polyp detection.</string>
+
+Without these, iOS will silently kill the app the moment image_picker
+tries to request camera or photo library access.
